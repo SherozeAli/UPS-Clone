@@ -2,7 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TabNavigator from "./TabNavigator";
 
-type RootStackParamList = {
+export type RootStackParamList = {
   Main: undefined;
   MyModal: {
     userId: string;
@@ -17,7 +17,7 @@ const RootStack = createNativeStackNavigator();
 
 const RootNavigator = () => {
   return (
-    <RootStack.Navigator>
+    <RootStack.Navigator screenOptions={{ headerShown: false }}>
       <RootStack.Group>
         <RootStack.Screen name="Main" component={TabNavigator} />
       </RootStack.Group>
